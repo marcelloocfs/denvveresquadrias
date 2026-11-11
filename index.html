@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denver Esquadrias — Alumínio, vidro e ACM sob medida</title>
+<meta name="description" content="Denver Esquadrias: esquadrias de alumínio, pele de vidro, vidro temperado, box de banheiro, portas em ACM e manutenção. Peça seu orçamento pelo WhatsApp (34) 99988-2585.">
+<meta name="theme-color" content="#07090b">
+<meta property="og:title" content="Denver Esquadrias">
+<meta property="og:description" content="Esquadrias de alumínio, pele de vidro, vidro temperado, box de banheiro e portas em ACM sob medida.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2307090b'/%3E%3Cg fill='%2335e0d8'%3E%3Crect x='18' y='20' width='44' height='6'/%3E%3Crect x='18' y='31' width='44' height='6'/%3E%3Crect x='38' y='42' width='44' height='6'/%3E%3Crect x='38' y='53' width='44' height='6'/%3E%3Crect x='24' y='64' width='40' height='6'/%3E%3Crect x='24' y='75' width='40' height='6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090b;
+  --bg-2:#0b0f12;
+  --panel:#0e1317;
+  --line:rgba(255,255,255,.08);
+  --line-2:rgba(255,255,255,.14);
+  --cyan:#35e0d8;
+  --cyan-2:#8ff5ef;
+  --cyan-dim:rgba(53,224,216,.12);
+  --text:#eef3f4;
+  --muted:#94a3a8;
+  --wa:#25d366;
+  --radius:18px;
+  --wrap:1180px;
+  --display:"Syncopate",system-ui,sans-serif;
+  --body:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:var(--body);background:var(--bg);color:var(--text);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.slats{
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.028) 0 1px,transparent 1px 16px);
+}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ---------- Botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 26px;border-radius:999px;font-weight:600;font-size:.95rem;
+  border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,border-color .25s;
+  white-space:nowrap;
+}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--cyan);color:#04201f;box-shadow:0 0 0 0 rgba(53,224,216,.5)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px -8px rgba(53,224,216,.55)}
+.btn-ghost{border-color:var(--line-2);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan-2);transform:translateY(-2px)}
+.btn-sm{padding:11px 20px;font-size:.88rem}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  transition:background .3s,border-color .3s,backdrop-filter .3s;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{background:rgba(7,9,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:40px;height:auto;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-text b{font-family:var(--display);font-weight:700;font-size:1.12rem;letter-spacing:.2em}
+.brand-text span{font-family:var(--display);font-size:.5rem;letter-spacing:.62em;color:var(--muted);margin-top:6px}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);background:transparent;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:2px;background:var(--text);transition:transform .3s,opacity .3s,top .3s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:27px}
+.burger[aria-expanded="true"] i:nth-child(1){top:21px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] i:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:150px 0 90px;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 520px at 78% 38%,rgba(53,224,216,.16),transparent 65%),
+    radial-gradient(700px 500px at 0% 100%,rgba(53,224,216,.07),transparent 60%),
+    var(--bg);
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 16px);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 60%,transparent 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-size:.62rem;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--cyan);
+}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{
+  font-size:clamp(2.35rem,5.4vw,4.3rem);line-height:1.04;font-weight:800;letter-spacing:-.035em;margin:22px 0 22px;
+}
+h1 em{font-style:normal;color:transparent;background:linear-gradient(100deg,var(--cyan) 10%,var(--cyan-2) 60%,#fff 100%);-webkit-background-clip:text;background-clip:text}
+.lead{font-size:1.08rem;color:var(--muted);max-width:540px;font-weight:300}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chip{font-size:.78rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.02)}
+
+/* Fachada de vidro */
+.facade-wrap{position:relative;perspective:1400px}
+.facade-glow{position:absolute;inset:8% 4%;background:radial-gradient(closest-side,rgba(53,224,216,.35),transparent);filter:blur(50px);z-index:-1}
+.facade{
+  position:relative;aspect-ratio:4/5;max-width:470px;margin-left:auto;
+  transform:rotateY(-16deg) rotateX(4deg);transform-style:preserve-3d;
+  border:6px solid #1a2126;border-radius:10px;background:#11171b;padding:6px;
+  display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,1fr);gap:6px;
+  box-shadow:30px 50px 90px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06);
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.pane{
+  position:relative;overflow:hidden;border-radius:2px;
+  background:linear-gradient(135deg,rgba(53,224,216,.20),rgba(53,224,216,.04) 45%,rgba(255,255,255,.02) 60%,rgba(53,224,216,.14));
+  box-shadow:inset 0 0 0 1px rgba(143,245,239,.14);
+  transition:background .9s,box-shadow .9s;
+}
+.pane::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);transform:translateX(-60%);animation:shine 7s ease-in-out infinite}
+.pane:nth-child(3n)::after{animation-delay:1.2s}.pane:nth-child(4n+1)::after{animation-delay:2.4s}.pane:nth-child(5n+2)::after{animation-delay:3.3s}
+.pane.lit{background:linear-gradient(135deg,rgba(143,245,239,.62),rgba(53,224,216,.28) 55%,rgba(53,224,216,.5));box-shadow:inset 0 0 0 1px rgba(143,245,239,.6),0 0 26px rgba(53,224,216,.45)}
+@keyframes shine{0%,55%{transform:translateX(-60%)}85%,100%{transform:translateX(60%)}}
+.tag{
+  position:absolute;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;
+  background:rgba(14,19,23,.86);border:1px solid var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  font-size:.8rem;font-weight:500;box-shadow:0 20px 40px -12px rgba(0,0,0,.7);animation:float 6s ease-in-out infinite;
+}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.tag-1{left:-2%;top:16%}
+.tag-2{right:-3%;bottom:14%;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ---------- Faixa ---------- */
+.marquee{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:20px 0}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 34s linear infinite}
+.marquee span{font-family:var(--display);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:48px;white-space:nowrap}
+.marquee span::after{content:"";width:22px;height:2px;background:var(--cyan)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Seções ---------- */
+section{padding:110px 0;position:relative}
+.sec-head{max-width:680px;margin-bottom:56px}
+h2{font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.12;font-weight:700;letter-spacing:-.03em;margin-top:18px}
+.sec-head p{color:var(--muted);margin-top:16px;font-weight:300;font-size:1.02rem}
+
+/* Serviços */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  position:relative;overflow:hidden;padding:34px 30px 30px;border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));border:1px solid var(--line);
+  transition:transform .35s,border-color .35s,box-shadow .35s;display:flex;flex-direction:column;
+}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(53,224,216,.14),transparent 55%);opacity:0;transition:opacity .35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(53,224,216,.45);box-shadow:0 30px 60px -30px rgba(53,224,216,.35)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.card-num{position:absolute;top:26px;right:28px;font-family:var(--display);font-size:.68rem;letter-spacing:.2em;color:rgba(255,255,255,.22)}
+.icon{width:58px;height:58px;border-radius:14px;display:grid;place-items:center;background:var(--cyan-dim);border:1px solid rgba(53,224,216,.25);margin-bottom:26px}
+.icon svg{width:30px;height:30px;stroke:var(--cyan);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.2rem;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.93rem;font-weight:300;flex:1}
+.card-link{margin-top:24px;display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:600;color:var(--cyan)}
+.card-link svg{width:16px;height:16px;transition:transform .25s}
+.card:hover .card-link svg{transform:translateX(5px)}
+
+/* Processo */
+.process{background:var(--bg-2);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.step{padding:6px 28px 6px 0;position:relative}
+.step+.step{padding-left:28px;border-left:1px solid var(--line)}
+.step b{font-family:var(--display);font-size:2rem;color:transparent;-webkit-text-stroke:1px var(--cyan);display:block;margin-bottom:20px}
+.step h3{font-size:1.08rem;font-weight:600;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.92rem;font-weight:300}
+
+/* Diferenciais */
+.why{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.why-list{display:grid;gap:14px}
+.why-item{display:flex;gap:18px;padding:22px 24px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.02);transition:border-color .3s,background .3s}
+.why-item:hover{border-color:rgba(53,224,216,.4);background:rgba(53,224,216,.04)}
+.why-item svg{width:26px;height:26px;flex:none;stroke:var(--cyan);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.why-item h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+.why-item p{color:var(--muted);font-size:.91rem;font-weight:300}
+
+/* Futuras instalações */
+.soon{padding:0}
+.soon-box{
+  position:relative;overflow:hidden;border-radius:26px;padding:64px 56px;
+  background:#0a0d10;border:1px solid rgba(53,224,216,.55);
+  box-shadow:0 0 0 1px rgba(53,224,216,.12),0 0 70px -20px rgba(53,224,216,.45),inset 0 0 60px -30px rgba(53,224,216,.35);
+  display:grid;grid-template-columns:auto 1fr auto;gap:44px;align-items:center;
+}
+.soon-box::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 14px)}
+.soon-box>*{position:relative}
+.soon-logo{width:120px}
+.soon h2{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.01em}
+.soon p{color:var(--muted);margin-top:12px;font-weight:300;max-width:520px}
+
+/* Orçamento */
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-list{display:grid;gap:14px;margin-top:36px}
+.contact{display:flex;align-items:center;gap:18px;padding:20px 22px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.02);transition:border-color .3s,transform .3s}
+.contact:hover{border-color:rgba(53,224,216,.45);transform:translateX(4px)}
+.contact .icon{margin:0;width:50px;height:50px;flex:none}
+.contact .icon svg{width:24px;height:24px}
+.contact small{display:block;color:var(--muted);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.contact strong{font-size:1.08rem;font-weight:600}
+form{padding:36px;border-radius:24px;background:var(--panel);border:1px solid var(--line-2);display:grid;gap:18px}
+form h3{font-size:1.25rem;font-weight:600}
+form>p{color:var(--muted);font-size:.9rem;font-weight:300;margin-top:-10px}
+label{display:grid;gap:8px;font-size:.82rem;color:var(--muted)}
+input,select,textarea{
+  width:100%;padding:14px 16px;border-radius:12px;background:#080b0d;border:1px solid var(--line-2);
+  color:var(--text);font-size:.95rem;transition:border-color .2s,box-shadow .2s;
+}
+textarea{resize:vertical;min-height:110px}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3a8' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:44px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(53,224,216,.14)}
+form .btn{width:100%}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* Vídeo */
+.showreel{padding-bottom:0}
+.reel{
+  position:relative;aspect-ratio:1438/786;border-radius:26px;overflow:hidden;background:#05070a;
+  border:1px solid rgba(53,224,216,.55);
+  box-shadow:0 0 0 1px rgba(53,224,216,.12),0 0 90px -24px rgba(53,224,216,.5),0 50px 90px -40px rgba(0,0,0,.9);
+}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.reel::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(7,9,11,.55) 0%,transparent 22%,transparent 78%,rgba(7,9,11,.6) 100%)}
+.reel-label{position:absolute;left:26px;top:24px;z-index:2;display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#fff}
+.reel-label i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.reel-sound{
+  position:absolute;right:22px;bottom:22px;z-index:2;display:inline-flex;align-items:center;gap:10px;
+  padding:11px 18px;border-radius:999px;cursor:pointer;font-size:.82rem;font-weight:600;color:#fff;
+  background:rgba(7,9,11,.62);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:border-color .25s,background .25s,color .25s;
+}
+.reel-sound:hover{border-color:var(--cyan);color:var(--cyan-2)}
+.reel-sound[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:#04201f}
+.reel-sound svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.reel-sound .on{display:none}
+.reel-sound[aria-pressed="true"] .on{display:block}
+.reel-sound[aria-pressed="true"] .off{display:none}
+@media (max-width:640px){
+  .reel{border-radius:18px}
+  .reel-label{left:16px;top:14px;font-size:.5rem}
+  .reel-sound{right:12px;bottom:12px;padding:9px 14px;font-size:.76rem}
+  .reel-sound span{display:none}
+}
+
+/* Instagram */
+.insta{background:var(--bg-2);border-block:1px solid var(--line)}
+.insta-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:48px}
+.insta-head .sec-head{margin:0}
+.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.post{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-2);background:#fff;height:560px;transition:transform .35s,border-color .35s,box-shadow .35s}
+.post:hover{transform:translateY(-6px);border-color:rgba(53,224,216,.55);box-shadow:0 30px 60px -30px rgba(53,224,216,.4)}
+.post iframe{width:100%;height:100%;border:0;display:block}
+
+/* Localização */
+.place{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:stretch}
+.place-info{display:flex;flex-direction:column;justify-content:center}
+.address{margin-top:30px;padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.02);display:flex;gap:18px;align-items:flex-start}
+.address .icon{margin:0;width:50px;height:50px;flex:none}
+.address .icon svg{width:24px;height:24px}
+.address small{display:block;color:var(--muted);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.address strong{font-size:1.05rem;font-weight:600;line-height:1.45;display:block}
+.address span{color:var(--muted);font-size:.92rem;font-weight:300}
+.place-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.map{position:relative;min-height:440px;border-radius:24px;overflow:hidden;border:1px solid rgba(53,224,216,.45);box-shadow:0 0 70px -24px rgba(53,224,216,.45);background:#0b0f12}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(.92) hue-rotate(180deg) saturate(.7) brightness(.95) contrast(.92)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px 0 36px;background:var(--bg-2)}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.foot p{color:var(--muted);font-size:.9rem;font-weight:300;max-width:340px;margin-top:18px}
+.foot h4{font-family:var(--display);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+.foot ul{list-style:none;display:grid;gap:10px}
+.foot ul a{color:var(--muted);font-size:.92rem;transition:color .2s}
+.foot ul a:hover{color:var(--text)}
+.copy{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* WhatsApp flutuante */
+.fab{
+  position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;
+  background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 34px -8px rgba(37,211,102,.6);transition:transform .25s;
+}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px;fill:#fff}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+
+/* Animação de entrada */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:64px}
+  .facade{margin:0 auto;max-width:380px;transform:rotateY(-10deg) rotateX(3deg)}
+  .tag-1{left:2%}.tag-2{right:2%}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:40px 0}
+  .step:nth-child(3){padding-left:0;border-left:0}
+  .why,.quote,.place{grid-template-columns:1fr;gap:44px}
+  .insta-grid{grid-template-columns:repeat(2,1fr)}
+  .map{min-height:380px}
+  .soon-box{grid-template-columns:1fr;text-align:center;justify-items:center;padding:52px 32px;gap:28px}
+}
+@media (max-width:820px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;padding:10px 24px 24px;
+    background:#07090b;border-bottom:1px solid var(--line);
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+  }
+  .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+  .nav-links a{display:block;padding:16px 0;font-size:1.05rem;color:var(--text);border-bottom:1px solid var(--line)}
+  .nav-links a::after{display:none}
+  .nav-right .btn{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  section{padding:76px 0}
+  .hero{padding:120px 0 64px}
+  .hero-cta .btn{width:100%}
+  .services,.insta-grid{grid-template-columns:1fr}
+  .post{height:540px}
+  .place-cta .btn{width:100%}
+  .steps{grid-template-columns:1fr;gap:0}
+  .step,.step+.step{padding:26px 0;border-left:0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:0;padding-top:0}
+  .step b{margin-bottom:12px}
+  .form-row{grid-template-columns:1fr}
+  form{padding:26px 20px}
+  .tag{font-size:.72rem;padding:9px 12px}
+  .soon-logo{width:90px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- Símbolo da marca (reutilizado) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 100 78">
+    <g fill="#35e0d8">
+      <rect x="0" y="0" width="68" height="3"/><rect x="0" y="5" width="68" height="3"/><rect x="0" y="10" width="68" height="3"/>
+      <rect x="0" y="15" width="68" height="3"/><rect x="0" y="20" width="68" height="3"/><rect x="0" y="25" width="68" height="3"/>
+      <rect x="28" y="31" width="72" height="3"/><rect x="28" y="36" width="72" height="3"/><rect x="36" y="41" width="64" height="3"/>
+      <rect x="28" y="46" width="72" height="3"/>
+      <rect x="8" y="52" width="92" height="3"/><rect x="8" y="57" width="92" height="3"/>
+      <rect x="8" y="62" width="62" height="3"/><rect x="8" y="67" width="62" height="3"/><rect x="8" y="72" width="54" height="3"/>
+    </g>
+  </symbol>
+  <symbol id="wa" viewBox="0 0 24 24">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24ZM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.45Z"/>
+  </symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" class="brand" aria-label="Denver Esquadrias — início">
+      <svg viewBox="0 0 100 78"><use href="#mark"/></svg>
+      <span class="brand-text"><b>DENVER</b><span>ESQUADRIAS</span></span>
+    </a>
+    <ul class="nav-links" id="menu">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#processo">Como funciona</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#orcamento">Orçamento</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="https://wa.me/5534999882585?text=Ol%C3%A1%2C%20Denver%20Esquadrias!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <svg fill="currentColor"><use href="#wa"/></svg>(34) 99988-2585
+      </a>
+      <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Alumínio · Vidro · ACM</span>
+      <h1 class="reveal" style="--d:.08s">Esquadrias que dão <em>forma e luz</em> ao seu projeto.</h1>
+      <p class="lead reveal" style="--d:.16s">Fabricação e instalação sob medida de esquadrias de alumínio, pele de vidro, vidro temperado, box de banheiro e portas em ACM — além de manutenção para manter tudo funcionando como novo.</p>
+      <div class="hero-cta reveal" style="--d:.24s">
+        <a class="btn btn-primary" href="https://wa.me/5534999882585?text=Ol%C3%A1%2C%20Denver%20Esquadrias!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+          <svg fill="currentColor"><use href="#wa"/></svg>Pedir orçamento
+        </a>
+        <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+      </div>
+      <div class="hero-meta reveal" style="--d:.32s">
+        <span class="chip">Residencial</span><span class="chip">Comercial</span><span class="chip">Fachadas</span><span class="chip">Sob medida</span>
+      </div>
+    </div>
+
+    <div class="facade-wrap reveal" style="--d:.2s" aria-hidden="true">
+      <div class="facade-glow"></div>
+      <div class="facade" id="facade"></div>
+      <div class="tag tag-1"><i></i>Pele de vidro</div>
+      <div class="tag tag-2"><i></i>Alumínio sob medida</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Esquadrias de alumínio</span><span>Pele de vidro</span><span>Vidro temperado</span><span>Box de banheiro</span><span>Portas em ACM</span><span>Manutenção</span>
+    <span>Esquadrias de alumínio</span><span>Pele de vidro</span><span>Vidro temperado</span><span>Box de banheiro</span><span>Portas em ACM</span><span>Manutenção</span>
+  </div>
+</div>
+
+<!-- VÍDEO -->
+<section class="showreel" id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Em movimento</span>
+      <h2 class="reveal" style="--d:.08s">Veja de perto o padrão Denver.</h2>
+    </div>
+    <div class="reel reveal" style="--d:.12s">
+      <video id="reel" muted loop playsinline preload="metadata" poster="assets/denver-video-capa.jpg" src="assets/denver-video.mp4" aria-label="Vídeo de apresentação da Denver Esquadrias"></video>
+      <div class="reel-label"><i></i>Denver Esquadrias</div>
+      <button class="reel-sound" id="reelSound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo">
+        <svg class="off" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+        <svg class="on" viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.500 8.500a5 5 0 0 1 0 7M18.500 5.500a9 9 0 0 1 0 13"/></svg>
+        <span>Som</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">O que fazemos</span>
+      <h2 class="reveal" style="--d:.08s">Soluções completas em alumínio e vidro.</h2>
+      <p class="reveal" style="--d:.16s">Do projeto à instalação, cada peça é feita na medida exata da sua obra — com acabamento limpo e funcionamento preciso.</p>
+    </div>
+
+    <div class="services">
+      <article class="card reveal">
+        <span class="card-num">01</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><rect x="4" y="5" width="24" height="22" rx="1.5"/><path d="M16 5v22M4 16h24M10 9.5l-2 2M22 9.5l-2 2"/></svg></div>
+        <h3>Esquadrias de alumínio</h3>
+        <p>Janelas, portas e portões sob medida, em diferentes linhas e cores. Leves, resistentes e com ótima vedação.</p>
+        <a class="card-link" data-servico="Esquadrias de alumínio" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card reveal" style="--d:.08s">
+        <span class="card-num">02</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><path d="M7 28V6l18-2v24M3 28h26M13 5.3V28M19 4.7V28M7 11.5l18-1M7 17h18M7 22.5h18"/></svg></div>
+        <h3>Pele de vidro</h3>
+        <p>Fachadas envidraçadas que valorizam o imóvel, com visual contínuo, entrada de luz natural e presença marcante.</p>
+        <a class="card-link" data-servico="Pele de vidro" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card reveal" style="--d:.16s">
+        <span class="card-num">03</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><path d="M9 4h14l4 6v18H5V10z"/><path d="M11 22l8-8M13 15l3-3M18 23l4-4"/></svg></div>
+        <h3>Vidro temperado</h3>
+        <p>Portas, janelas, divisórias, guarda-corpos e fechamentos em vidro temperado — segurança com leveza visual.</p>
+        <a class="card-link" data-servico="Vidro temperado" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-num">04</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><path d="M5 28V8a4 4 0 0 1 8 0"/><path d="M10 11h6"/><path d="M11 14.5v1.5M13 14.5v1.5M15 14.5v1.5"/><rect x="17" y="6" width="10" height="22" rx="1"/><path d="M19.5 17v3M3 28h26"/></svg></div>
+        <h3>Box de banheiro</h3>
+        <p>Box sob medida em vidro temperado, de abrir ou de correr, com ferragens de qualidade e instalação caprichada.</p>
+        <a class="card-link" data-servico="Box de banheiro" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card reveal" style="--d:.08s">
+        <span class="card-num">05</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><rect x="8" y="3" width="16" height="26" rx="1.5"/><path d="M20 12v8M12 7h4M12 25h4M4 29h24"/></svg></div>
+        <h3>Portas em ACM</h3>
+        <p>Portas modernas em alumínio composto: visual imponente, superfície lisa e alta durabilidade para sua entrada.</p>
+        <a class="card-link" data-servico="Portas em ACM" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+
+      <article class="card reveal" style="--d:.16s">
+        <span class="card-num">06</span>
+        <div class="icon"><svg viewBox="0 0 32 32"><path d="M19.5 8.5a6 6 0 0 0-7.8 7.3L4 23.5 8.500 28l7.700-7.700a6 6 0 0 0 7.300-7.800l-3.800 3.800-3.500-.7-.7-3.500z"/></svg></div>
+        <h3>Manutenção</h3>
+        <p>Regulagem, troca de roldanas, fechaduras, borrachas e vidros. Sua esquadria voltando a funcionar como deve.</p>
+        <a class="card-link" data-servico="Manutenção" href="#orcamento">Solicitar orçamento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="process" id="processo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow reveal">Como funciona</span>
+      <h2 class="reveal" style="--d:.08s">Do primeiro contato à instalação.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>01</b><h3>Contato</h3><p>Você chama no WhatsApp e conta o que precisa. Fotos e medidas aproximadas já ajudam.</p></div>
+      <div class="step reveal" style="--d:.08s"><b>02</b><h3>Medição e orçamento</h3><p>Avaliamos o local, tiramos as medidas e apresentamos a melhor solução para o seu caso.</p></div>
+      <div class="step reveal" style="--d:.16s"><b>03</b><h3>Fabricação</h3><p>Suas peças são produzidas sob medida, com atenção a cada corte, encaixe e acabamento.</p></div>
+      <div class="step reveal" style="--d:.24s"><b>04</b><h3>Instalação</h3><p>Instalamos com cuidado e limpeza, e entregamos tudo regulado e pronto para o uso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="wrap why">
+    <div>
+      <span class="eyebrow reveal">Por que a Denver</span>
+      <h2 class="reveal" style="--d:.08s">Precisão no alumínio. Transparência no vidro e no atendimento.</h2>
+      <p class="lead reveal" style="--d:.16s;margin-top:18px">Trabalhamos para que o resultado final seja exatamente o que você imaginou — bonito por fora e funcional no dia a dia.</p>
+      <a class="btn btn-ghost reveal" style="--d:.24s;margin-top:30px" href="https://www.instagram.com/denveresquadrias/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>
+        Veja nossos trabalhos no Instagram
+      </a>
+    </div>
+    <div class="why-list">
+      <div class="why-item reveal"><svg viewBox="0 0 24 24"><path d="M3 17h18M3 17l3-3M3 17l3 3M21 17l-3-3M21 17l-3 3M7 4h10v8H7z"/></svg><div><h3>Tudo sob medida</h3><p>Cada peça é projetada para o seu vão, o seu ambiente e o seu estilo.</p></div></div>
+      <div class="why-item reveal" style="--d:.08s"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.500 4.200 1.200 6L12 16.600 6.600 19.500l1.200-6L3.300 9.300l6.100-.7z"/></svg><div><h3>Acabamento caprichado</h3><p>Cortes precisos, encaixes firmes e atenção aos detalhes que fazem diferença.</p></div></div>
+      <div class="why-item reveal" style="--d:.16s"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.500-3.200 7.800-8 9-4.800-1.200-8-4.500-8-9V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg><div><h3>Materiais de qualidade</h3><p>Alumínio, vidros e ferragens escolhidos para durar e funcionar bem por muitos anos.</p></div></div>
+      <div class="why-item reveal" style="--d:.24s"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12.500h5"/></svg><div><h3>Atendimento direto</h3><p>Você fala com quem entende do assunto, do orçamento ao pós-instalação.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="insta" id="instagram">
+  <div class="wrap">
+    <div class="insta-head">
+      <div class="sec-head">
+        <span class="eyebrow reveal">Instagram</span>
+        <h2 class="reveal" style="--d:.08s">Nossos trabalhos mais recentes.</h2>
+        <p class="reveal" style="--d:.16s">Acompanhe obras, instalações e novidades em @denveresquadrias.</p>
+      </div>
+      <a class="btn btn-ghost reveal" style="--d:.2s" href="https://www.instagram.com/denveresquadrias/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>
+        Seguir no Instagram
+      </a>
+    </div>
+    <!-- Para trocar os posts, basta mudar o código de cada link (o trecho depois de /p/ ou /reel/) -->
+    <div class="insta-grid">
+      <div class="post reveal"><iframe loading="lazy" title="Post da Denver Esquadrias no Instagram" src="https://www.instagram.com/p/DesHBafoxbC/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+      <div class="post reveal" style="--d:.08s"><iframe loading="lazy" title="Post da Denver Esquadrias no Instagram" src="https://www.instagram.com/p/DecWTjdEYf1/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+      <div class="post reveal" style="--d:.16s"><iframe loading="lazy" title="Post da Denver Esquadrias no Instagram" src="https://www.instagram.com/p/DePiR09I0wC/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+      <div class="post reveal"><iframe loading="lazy" title="Reel da Denver Esquadrias no Instagram" src="https://www.instagram.com/reel/De-LpOXiax_/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+      <div class="post reveal" style="--d:.08s"><iframe loading="lazy" title="Reel da Denver Esquadrias no Instagram" src="https://www.instagram.com/reel/Dehy6KAizjF/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+      <div class="post reveal" style="--d:.16s"><iframe loading="lazy" title="Post da Denver Esquadrias no Instagram" src="https://www.instagram.com/p/DdKSaw0Ixlq/embed/" scrolling="no" allowtransparency="true"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURAS INSTALAÇÕES -->
+<section class="soon" style="padding-top:110px">
+  <div class="wrap">
+    <div class="soon-box reveal">
+      <svg class="soon-logo" viewBox="0 0 100 78" aria-hidden="true"><use href="#mark"/></svg>
+      <div>
+        <span class="eyebrow">Em breve</span>
+        <h2>Futuras instalações</h2>
+        <p>A Denver Esquadrias está de casa nova a caminho. Enquanto isso, seguimos atendendo normalmente — é só chamar.</p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/5534999882585" target="_blank" rel="noopener"><svg fill="currentColor"><use href="#wa"/></svg>Falar agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORÇAMENTO -->
+<section id="orcamento">
+  <div class="wrap quote">
+    <div>
+      <span class="eyebrow reveal">Orçamento</span>
+      <h2 class="reveal" style="--d:.08s">Vamos tirar seu projeto do papel?</h2>
+      <p class="lead reveal" style="--d:.16s;margin-top:16px">Conte o que você precisa e receba seu orçamento pelo WhatsApp, sem compromisso.</p>
+      <div class="contact-list">
+        <a class="contact reveal" href="https://wa.me/5534999882585" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24" style="fill:var(--cyan);stroke:none"><use href="#wa"/></svg></div>
+          <div><small>WhatsApp</small><strong>(34) 99988-2585</strong></div>
+        </a>
+        <a class="contact reveal" style="--d:.08s" href="https://www.instagram.com/denveresquadrias/" target="_blank" rel="noopener">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".5"/></svg></div>
+          <div><small>Instagram</small><strong>@denveresquadrias</strong></div>
+        </a>
+      </div>
+    </div>
+
+    <form id="form" class="reveal" style="--d:.12s" novalidate>
+      <h3>Peça seu orçamento</h3>
+      <p>Preencha e continue a conversa direto no WhatsApp.</p>
+      <div class="form-row">
+        <label>Seu nome
+          <input type="text" name="nome" autocomplete="name" placeholder="Nome e sobrenome" required>
+        </label>
+        <label>Cidade / bairro
+          <input type="text" name="local" autocomplete="address-level2" placeholder="Onde é a obra?">
+        </label>
+      </div>
+      <label>Serviço
+        <select name="servico" id="servico">
+          <option>Esquadrias de alumínio</option>
+          <option>Pele de vidro</option>
+          <option>Vidro temperado</option>
+          <option>Box de banheiro</option>
+          <option>Portas em ACM</option>
+          <option>Manutenção</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label>Detalhes
+        <textarea name="msg" placeholder="Medidas aproximadas, quantidade, cor, prazo…"></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit"><svg fill="currentColor"><use href="#wa"/></svg>Enviar pelo WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao" style="padding-top:0">
+  <div class="wrap place">
+    <div class="place-info">
+      <span class="eyebrow reveal">Onde estamos</span>
+      <h2 class="reveal" style="--d:.08s">Venha nos visitar em Monte Carmelo.</h2>
+      <div class="address reveal" style="--d:.16s">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.200-7-11.500a7 7 0 0 1 14 0C19 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg></div>
+        <div>
+          <small>Endereço</small>
+          <strong>Rua Joaquim Rezende, 890</strong>
+          <span>Lambari · Monte Carmelo – MG</span>
+        </div>
+      </div>
+      <div class="place-cta reveal" style="--d:.24s">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=-18.7156462,-47.4998899" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"/></svg>Como chegar
+        </a>
+        <a class="btn btn-ghost" href="https://wa.me/5534999882585" target="_blank" rel="noopener">Avisar que estou indo</a>
+      </div>
+    </div>
+    <div class="map reveal" style="--d:.12s">
+      <iframe loading="lazy" title="Mapa: Denver Esquadrias, Rua Joaquim Rezende, 890, Monte Carmelo – MG" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+        src="https://www.google.com/maps?q=-18.7156462,-47.4998899&z=15&hl=pt-BR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#inicio" class="brand">
+          <svg viewBox="0 0 100 78"><use href="#mark"/></svg>
+          <span class="brand-text"><b>DENVER</b><span>ESQUADRIAS</span></span>
+        </a>
+        <p>Esquadrias de alumínio, vidros e ACM sob medida para casas, comércios e fachadas.</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Esquadrias de alumínio</a></li>
+          <li><a href="#servicos">Pele de vidro</a></li>
+          <li><a href="#servicos">Vidro temperado</a></li>
+          <li><a href="#servicos">Box de banheiro</a></li>
+          <li><a href="#servicos">Portas em ACM</a></li>
+          <li><a href="#servicos">Manutenção</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5534999882585" target="_blank" rel="noopener">(34) 99988-2585</a></li>
+          <li><a href="https://www.instagram.com/denveresquadrias/" target="_blank" rel="noopener">@denveresquadrias</a></li>
+          <li><a href="#localizacao">Rua Joaquim Rezende, 890<br>Lambari · Monte Carmelo – MG</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="ano">2026</span> Denver Esquadrias. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5534999882585?text=Ol%C3%A1%2C%20Denver%20Esquadrias!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg><use href="#wa"/></svg>
+</a>
+
+<script>
+(function(){
+  var WA = '5534999882585';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Header
+  var header = document.getElementById('top');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 20); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Menu mobile
+  var burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  function setMenu(open){
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+  burger.addEventListener('click', function(){ setMenu(!menu.classList.contains('open')); });
+  menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') setMenu(false); });
+
+  // Fachada de vidro
+  var facade = document.getElementById('facade'), panes = [];
+  for(var i=0;i<20;i++){ var p=document.createElement('div'); p.className='pane'; facade.appendChild(p); panes.push(p); }
+  [2,5,11,16].forEach(function(n){ panes[n].classList.add('lit'); });
+  if(!reduce){
+    setInterval(function(){
+      var p = panes[Math.floor(Math.random()*panes.length)];
+      p.classList.toggle('lit');
+    }, 1100);
+    var wrap = document.querySelector('.facade-wrap');
+    if(window.matchMedia('(hover:hover)').matches){
+      wrap.addEventListener('mousemove', function(e){
+        var r = wrap.getBoundingClientRect();
+        var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+        facade.style.transform = 'rotateY('+(-16 + x*14)+'deg) rotateX('+(4 - y*10)+'deg)';
+      });
+      wrap.addEventListener('mouseleave', function(){ facade.style.transform = ''; });
+    }
+  }
+
+  // Brilho que segue o mouse nos cards
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('mousemove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // Entrada ao rolar
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Vídeo: toca só quando está na tela, sem som por padrão
+  var reel = document.getElementById('reel'), sound = document.getElementById('reelSound');
+  if(reduce){
+    reel.controls = true; reel.loop = false; sound.hidden = true;
+  } else if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ var p = reel.play(); if(p && p.catch) p.catch(function(){}); }
+        else { reel.pause(); }
+      });
+    }, {threshold:.35}).observe(reel);
+  } else {
+    reel.autoplay = true; reel.play();
+  }
+  sound.addEventListener('click', function(){
+    reel.muted = !reel.muted;
+    sound.setAttribute('aria-pressed', !reel.muted);
+    sound.setAttribute('aria-label', reel.muted ? 'Ativar som do vídeo' : 'Desativar som do vídeo');
+    if(reel.paused){ var p = reel.play(); if(p && p.catch) p.catch(function(){}); }
+  });
+
+  // Card -> pré-seleciona o serviço no formulário
+  var select = document.getElementById('servico');
+  document.querySelectorAll('[data-servico]').forEach(function(a){
+    a.addEventListener('click', function(){ select.value = a.getAttribute('data-servico'); });
+  });
+
+  // Formulário -> WhatsApp
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements, nome = f.nome.value.trim();
+    if(!nome){ f.nome.focus(); return; }
+    var linhas = ['Olá, Denver Esquadrias! Gostaria de um orçamento.', '', '*Nome:* ' + nome];
+    if(f.local.value.trim()) linhas.push('*Local:* ' + f.local.value.trim());
+    linhas.push('*Serviço:* ' + f.servico.value);
+    if(f.msg.value.trim()) linhas.push('*Detalhes:* ' + f.msg.value.trim());
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(linhas.join('\n')), '_blank', 'noopener');
+  });
+
+  document.getElementById('ano').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
